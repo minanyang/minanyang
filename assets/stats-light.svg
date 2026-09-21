@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="264" viewBox="0 0 840 264" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif">
-  <rect x="0.5" y="0.5" width="839" height="263" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="382" viewBox="0 0 840 382" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif">
+  <rect x="0.5" y="0.5" width="839" height="381" rx="12" fill="#ffffff" stroke="#d0d7de"/>
   
     <g transform="translate(32, 32)">
       <text y="36" font-size="36" font-weight="600" fill="#1f2328">40</text>
@@ -34,5 +34,13 @@
     <text x="436" y="206" font-size="13" fill="#1f2328">C# <tspan fill="#59636e">2.3%</tspan></text>
     <circle cx="619" cy="202" r="5" fill="#8b949e"/>
     <text x="630" y="206" font-size="13" fill="#1f2328">Other <tspan fill="#59636e">2.2%</tspan></text>
-  <text x="32" y="240" font-size="12" fill="#59636e">Including private work · updated 2026-09-21</text>
+  
+  <text x="32" y="268" font-size="14" font-weight="600" fill="#1f2328">By year</text>
+  <text x="234" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2019</text><text x="316" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2020</text><text x="398" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2021</text><text x="480" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2022</text><text x="562" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2023</text><text x="644" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2024</text><text x="726" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2025</text><text x="808" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2026</text>
+  <line x1="32" x2="808" y1="278" y2="278" stroke="#d0d7de"/>
+  <text x="32" y="300" font-size="13" fill="#59636e">Commits</text>
+  <text x="234" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="316" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="398" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">375</text><text x="480" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">382</text><text x="562" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">457</text><text x="644" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">351</text><text x="726" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">430</text><text x="808" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">2,285</text>
+  <text x="32" y="324" font-size="13" fill="#59636e">Pull requests</text>
+  <text x="234" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">2</text><text x="316" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">11</text><text x="398" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">51</text><text x="480" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="562" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="644" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">2</text><text x="726" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="808" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">468</text>
+  <text x="32" y="358" font-size="12" fill="#59636e">Including private work · updated 2026-09-21</text>
 </svg>

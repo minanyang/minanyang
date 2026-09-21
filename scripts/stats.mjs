@@ -63,7 +63,7 @@ function repoKey(dir) {
 }
 
 const repos = new Set()
-const commits = new Set()
+const commits = new Map() // hash -> author year
 const seenFileChanges = new Set()
 const linesByLanguage = {}
 
@@ -74,7 +74,7 @@ for (const dir of findRepos(config.root)) {
 
   let log
   try {
-    log = git(dir, 'log', '--all', '--format=C %H %ae', '--numstat')
+    log = git(dir, 'log', '--all', '--format=C %H %ae %ad', '--date=format:%Y', '--numstat')
   } catch {
     continue // empty repo
   }
@@ -83,10 +83,10 @@ for (const dir of findRepos(config.root)) {
   let hash = null
   for (const line of log.split('\n')) {
     if (line.startsWith('C ')) {
-      const [, h, email] = line.split(' ')
+      const [, h, email, year] = line.split(' ')
       hash = emails.has(email.toLowerCase()) ? h : null
       if (hash) {
-        commits.add(hash)
+        commits.set(hash, year)
         mine = true
       }
       continue
@@ -109,12 +109,15 @@ for (const dir of findRepos(config.root)) {
 
 // PRs, including repos that are not cloned locally. Search API caps at 1000 results.
 let pullRequests = 0
+const pullRequestsByYear = {}
 for (let page = 1; page <= 10; page++) {
   const result = JSON.parse(
     execFileSync('gh', ['api', 'search/issues', '-X', 'GET', '-f', `q=author:${config.githubUser} type:pr`, '-f', 'per_page=100', '-f', `page=${page}`], { encoding: 'utf8' }),
   )
   pullRequests = result.total_count
   for (const item of result.items) {
+    const year = item.created_at.slice(0, 4)
+    pullRequestsByYear[year] = (pullRequestsByYear[year] ?? 0) + 1
     const key = normalizeRepo(item.repository_url.replace(/.*\/repos\//, ''))
     if (!isExcluded(key)) repos.add(key)
   }
@@ -128,11 +131,16 @@ const languages = ranked.slice(0, TOP).map(([name, lines]) => ({ name, color: LA
 const otherLines = ranked.slice(TOP).reduce((sum, [, lines]) => sum + lines, 0)
 if (otherLines) languages.push({ name: 'Other', color: '#8b949e', percent: (otherLines / totalLines) * 100 })
 
+const commitsByYear = {}
+for (const year of commits.values()) commitsByYear[year] = (commitsByYear[year] ?? 0) + 1
+const years = [...new Set([...Object.keys(commitsByYear), ...Object.keys(pullRequestsByYear)])].sort()
+
 const stats = {
   repositories: repos.size,
   commits: commits.size,
   pullRequests,
   languages,
+  byYear: years.map((year) => ({ year, commits: commitsByYear[year] ?? 0, pullRequests: pullRequestsByYear[year] ?? 0 })),
   updatedAt: new Date().toISOString().slice(0, 10),
 }
 console.log(JSON.stringify(stats, null, 2))
@@ -190,7 +198,22 @@ function render(theme) {
     })
     .join('')
   const legendRows = Math.ceil(languages.length / legendColumns)
-  const footerY = barY + 40 + legendRows * 26 + 8
+
+  const tableY = barY + 40 + legendRows * 26 + 36
+  const labelWidth = 120
+  const yearWidth = (barWidth - labelWidth) / stats.byYear.length
+  const cell = (value, i, y, color, weight = 400) =>
+    `<text x="${PAD + labelWidth + (i + 1) * yearWidth}" y="${y}" font-size="13" font-weight="${weight}" text-anchor="end" fill="${color}">${value}</text>`
+  const count = (n) => (n ? n.toLocaleString('en-US') : '–')
+  const table = `
+  <text x="${PAD}" y="${tableY}" font-size="14" font-weight="600" fill="${t.text}">By year</text>
+  ${stats.byYear.map(({ year }, i) => cell(year, i, tableY, t.muted, 600)).join('')}
+  <line x1="${PAD}" x2="${WIDTH - PAD}" y1="${tableY + 10}" y2="${tableY + 10}" stroke="${t.border}"/>
+  <text x="${PAD}" y="${tableY + 32}" font-size="13" fill="${t.muted}">Commits</text>
+  ${stats.byYear.map(({ commits }, i) => cell(count(commits), i, tableY + 32, t.text)).join('')}
+  <text x="${PAD}" y="${tableY + 56}" font-size="13" fill="${t.muted}">Pull requests</text>
+  ${stats.byYear.map(({ pullRequests }, i) => cell(count(pullRequests), i, tableY + 56, t.text)).join('')}`
+  const footerY = tableY + 90
   const height = footerY + 24
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${height}" viewBox="0 0 ${WIDTH} ${height}" font-family="${FONT}">
@@ -201,6 +224,7 @@ function render(theme) {
   <rect x="${PAD}" y="${barY}" width="${barWidth}" height="10" rx="5" fill="${t.track}"/>
   <g clip-path="url(#bar)">${segments}</g>
   ${legend}
+  ${table}
   <text x="${PAD}" y="${footerY}" font-size="12" fill="${t.muted}">Including private work · updated ${stats.updatedAt}</text>
 </svg>
 `
