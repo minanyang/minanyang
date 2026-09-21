@@ -6,31 +6,33 @@
       <text y="62" font-size="14" fill="#59636e">Repositories</text>
     </g>
     <g transform="translate(290.6666666666667, 32)">
-      <text y="36" font-size="36" font-weight="600" fill="#1f2328">4,293</text>
+      <text y="36" font-size="36" font-weight="600" fill="#1f2328">4,280</text>
       <text y="62" font-size="14" fill="#59636e">Commits</text>
     </g>
     <g transform="translate(549.3333333333334, 32)">
-      <text y="36" font-size="36" font-weight="600" fill="#1f2328">532</text>
+      <text y="36" font-size="36" font-weight="600" fill="#1f2328">534</text>
       <text y="62" font-size="14" fill="#59636e">Pull requests</text>
     </g>
   <text x="32" y="124" font-size="14" font-weight="600" fill="#1f2328">Languages</text>
   <clipPath id="bar"><rect x="32" y="140" width="776" height="10" rx="5"/></clipPath>
   <rect x="32" y="140" width="776" height="10" rx="5" fill="#eaeef2"/>
-  <g clip-path="url(#bar)"><rect x="32.00" y="140" width="508.95" height="10" fill="#3178c6"/><rect x="540.95" y="140" width="134.87" height="10" fill="#41b883"/><rect x="675.83" y="140" width="51.48" height="10" fill="#f1e05a"/><rect x="727.30" y="140" width="26.49" height="10" fill="#e38c00"/><rect x="753.80" y="140" width="19.02" height="10" fill="#3572a5"/><rect x="772.82" y="140" width="17.82" height="10" fill="#178600"/><rect x="790.64" y="140" width="17.36" height="10" fill="#8b949e"/></g>
+  <g clip-path="url(#bar)"><rect x="32.00" y="140" width="304.06" height="10" fill="#3178c6"/><rect x="336.06" y="140" width="205.15" height="10" fill="#61dafb"/><rect x="541.21" y="140" width="134.87" height="10" fill="#41b883"/><rect x="676.08" y="140" width="51.22" height="10" fill="#f1e05a"/><rect x="727.30" y="140" width="26.49" height="10" fill="#e38c00"/><rect x="753.80" y="140" width="19.02" height="10" fill="#3572a5"/><rect x="772.82" y="140" width="17.82" height="10" fill="#178600"/><rect x="790.64" y="140" width="17.36" height="10" fill="#8b949e"/></g>
   
     <circle cx="37" cy="176" r="5" fill="#3178c6"/>
-    <text x="48" y="180" font-size="13" fill="#1f2328">TypeScript <tspan fill="#59636e">65.6%</tspan></text>
-    <circle cx="231" cy="176" r="5" fill="#41b883"/>
-    <text x="242" y="180" font-size="13" fill="#1f2328">Vue <tspan fill="#59636e">17.4%</tspan></text>
-    <circle cx="425" cy="176" r="5" fill="#f1e05a"/>
-    <text x="436" y="180" font-size="13" fill="#1f2328">JavaScript <tspan fill="#59636e">6.6%</tspan></text>
-    <circle cx="619" cy="176" r="5" fill="#e38c00"/>
-    <text x="630" y="180" font-size="13" fill="#1f2328">SQL <tspan fill="#59636e">3.4%</tspan></text>
-    <circle cx="37" cy="202" r="5" fill="#3572a5"/>
-    <text x="48" y="206" font-size="13" fill="#1f2328">Python <tspan fill="#59636e">2.5%</tspan></text>
-    <circle cx="231" cy="202" r="5" fill="#178600"/>
-    <text x="242" y="206" font-size="13" fill="#1f2328">C# <tspan fill="#59636e">2.3%</tspan></text>
-    <circle cx="425" cy="202" r="5" fill="#8b949e"/>
-    <text x="436" y="206" font-size="13" fill="#1f2328">Other <tspan fill="#59636e">2.2%</tspan></text>
+    <text x="48" y="180" font-size="13" fill="#1f2328">TypeScript <tspan fill="#59636e">39.2%</tspan></text>
+    <circle cx="231" cy="176" r="5" fill="#61dafb"/>
+    <text x="242" y="180" font-size="13" fill="#1f2328">React <tspan fill="#59636e">26.4%</tspan></text>
+    <circle cx="425" cy="176" r="5" fill="#41b883"/>
+    <text x="436" y="180" font-size="13" fill="#1f2328">Vue <tspan fill="#59636e">17.4%</tspan></text>
+    <circle cx="619" cy="176" r="5" fill="#f1e05a"/>
+    <text x="630" y="180" font-size="13" fill="#1f2328">JavaScript <tspan fill="#59636e">6.6%</tspan></text>
+    <circle cx="37" cy="202" r="5" fill="#e38c00"/>
+    <text x="48" y="206" font-size="13" fill="#1f2328">SQL <tspan fill="#59636e">3.4%</tspan></text>
+    <circle cx="231" cy="202" r="5" fill="#3572a5"/>
+    <text x="242" y="206" font-size="13" fill="#1f2328">Python <tspan fill="#59636e">2.5%</tspan></text>
+    <circle cx="425" cy="202" r="5" fill="#178600"/>
+    <text x="436" y="206" font-size="13" fill="#1f2328">C# <tspan fill="#59636e">2.3%</tspan></text>
+    <circle cx="619" cy="202" r="5" fill="#8b949e"/>
+    <text x="630" y="206" font-size="13" fill="#1f2328">Other <tspan fill="#59636e">2.2%</tspan></text>
   <text x="32" y="240" font-size="12" fill="#59636e">Including private work · updated 2026-09-21</text>
 </svg>

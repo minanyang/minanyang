@@ -13,8 +13,10 @@ const IGNORED_PATH = /(^|\/)(node_modules|dist|build|public|vendor|generated|cor
 const MAX_LINES_PER_FILE_CHANGE = 5000
 
 const LANGUAGES = {
-  TypeScript: { color: '#3178c6', ext: ['ts', 'tsx', 'mts', 'cts'] },
-  JavaScript: { color: '#f1e05a', ext: ['js', 'jsx', 'mjs', 'cjs'] },
+  TypeScript: { color: '#3178c6', ext: ['ts', 'mts', 'cts'] },
+  JavaScript: { color: '#f1e05a', ext: ['js', 'mjs', 'cjs'] },
+  // Frameworks with their own file types are shown on their own, like GitHub does for Vue.
+  React: { color: '#61dafb', ext: ['tsx', 'jsx'] },
   Vue: { color: '#41b883', ext: ['vue'] },
   SQL: { color: '#e38c00', ext: ['sql'] },
   Python: { color: '#3572a5', ext: ['py'] },
@@ -121,7 +123,7 @@ for (let page = 1; page <= 10; page++) {
 
 const totalLines = Object.values(linesByLanguage).reduce((a, b) => a + b, 0)
 const ranked = Object.entries(linesByLanguage).sort((a, b) => b[1] - a[1])
-const TOP = 6
+const TOP = 7
 const languages = ranked.slice(0, TOP).map(([name, lines]) => ({ name, color: LANGUAGES[name].color, percent: (lines / totalLines) * 100 }))
 const otherLines = ranked.slice(TOP).reduce((sum, [, lines]) => sum + lines, 0)
 if (otherLines) languages.push({ name: 'Other', color: '#8b949e', percent: (otherLines / totalLines) * 100 })
