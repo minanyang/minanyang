@@ -49,14 +49,16 @@ function findRepos(dir, depth = 0) {
   )
 }
 
-function normalizeRepo(nameWithOwner) {
-  const [owner, name] = nameWithOwner.toLowerCase().split('/')
-  return `${config.ownerAliases[owner] ?? owner}/${name}`
+// Host-less "owner/name" so a project mirrored on GitHub and GitLab counts once.
+// GitLab names can be nested (group/subgroup/name); only the first segment is the owner.
+function normalizeRepo(fullPath) {
+  const [owner, ...rest] = fullPath.toLowerCase().split('/')
+  return `${config.ownerAliases[owner] ?? owner}/${rest.join('/')}`
 }
 
 function repoKey(dir) {
   try {
-    const match = git(dir, 'remote', 'get-url', 'origin').trim().match(/github\.com[:/](.+?)(\.git)?$/)
+    const match = git(dir, 'remote', 'get-url', 'origin').trim().match(/(?:github|gitlab)\.com[:/](.+?)(\.git)?$/)
     if (match) return normalizeRepo(match[1])
   } catch {}
   return `local:${relative(config.root, dir)}`
@@ -107,7 +109,7 @@ for (const dir of findRepos(config.root)) {
   if (mine) repos.add(key)
 }
 
-// PRs, including repos that are not cloned locally. Search API caps at 1000 results.
+// GitHub PRs, including repos that are not cloned locally. Search API caps at 1000 results.
 let pullRequests = 0
 const pullRequestsByYear = {}
 for (let page = 1; page <= 10; page++) {
@@ -124,6 +126,21 @@ for (let page = 1; page <= 10; page++) {
   if (page * 100 >= result.total_count) break
 }
 
+// GitLab merge requests count as pull requests.
+for (let page = 1; ; page++) {
+  const result = JSON.parse(
+    execFileSync('glab', ['api', `merge_requests?author_username=${config.gitlabUser}&scope=all&state=all&per_page=100&page=${page}`], { encoding: 'utf8', maxBuffer: 1 << 30 }),
+  )
+  for (const item of result) {
+    pullRequests++
+    const year = item.created_at.slice(0, 4)
+    pullRequestsByYear[year] = (pullRequestsByYear[year] ?? 0) + 1
+    const key = normalizeRepo(item.references.full.split('!')[0])
+    if (!isExcluded(key)) repos.add(key)
+  }
+  if (result.length < 100) break
+}
+
 const totalLines = Object.values(linesByLanguage).reduce((a, b) => a + b, 0)
 const ranked = Object.entries(linesByLanguage).sort((a, b) => b[1] - a[1])
 const TOP = 7
@@ -133,7 +150,9 @@ if (otherLines) languages.push({ name: 'Other', color: '#8b949e', percent: (othe
 
 const commitsByYear = {}
 for (const year of commits.values()) commitsByYear[year] = (commitsByYear[year] ?? 0) + 1
-const years = [...new Set([...Object.keys(commitsByYear), ...Object.keys(pullRequestsByYear)])].sort()
+// Start the table at the first year with local commits; earlier years only have PR data.
+const firstYear = Object.keys(commitsByYear).sort()[0]
+const years = [...new Set([...Object.keys(commitsByYear), ...Object.keys(pullRequestsByYear)])].filter((y) => y >= firstYear).sort()
 
 const stats = {
   repositories: repos.size,
@@ -161,7 +180,7 @@ function render(theme) {
   const tiles = [
     ['Repositories', stats.repositories],
     ['Commits', stats.commits],
-    ['Pull requests', stats.pullRequests],
+    ['Pull / merge requests', stats.pullRequests],
   ]
   const tileWidth = (WIDTH - PAD * 2) / tiles.length
   const tilesSvg = tiles
@@ -211,7 +230,7 @@ function render(theme) {
   <line x1="${PAD}" x2="${WIDTH - PAD}" y1="${tableY + 10}" y2="${tableY + 10}" stroke="${t.border}"/>
   <text x="${PAD}" y="${tableY + 32}" font-size="13" fill="${t.muted}">Commits</text>
   ${stats.byYear.map(({ commits }, i) => cell(count(commits), i, tableY + 32, t.text)).join('')}
-  <text x="${PAD}" y="${tableY + 56}" font-size="13" fill="${t.muted}">Pull requests</text>
+  <text x="${PAD}" y="${tableY + 56}" font-size="13" fill="${t.muted}">PRs / MRs</text>
   ${stats.byYear.map(({ pullRequests }, i) => cell(count(pullRequests), i, tableY + 56, t.text)).join('')}`
   const footerY = tableY + 90
   const height = footerY + 24
