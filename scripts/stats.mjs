@@ -64,7 +64,11 @@ function repoKey(dir) {
   return `local:${relative(config.root, dir)}`
 }
 
+// Only diff my own commits; git matches --author against "Name <email>", so the exact check stays below.
+const authorArgs = [...emails].map((e) => `--author=<${e.replace(/[.*+?^$()[\]{}|\\]/g, '\\$&')}>`)
+
 const repos = new Set()
+const scannedGitDirs = new Set() // worktrees share one object store and refs; scan it once
 const commits = new Map() // hash -> author year
 const seenFileChanges = new Set()
 const linesByLanguage = {}
@@ -76,7 +80,10 @@ for (const dir of findRepos(config.root)) {
 
   let log
   try {
-    log = git(dir, 'log', '--all', '--format=C %H %ae %ad', '--date=format:%Y', '--numstat')
+    const gitDir = git(dir, 'rev-parse', '--path-format=absolute', '--git-common-dir').trim()
+    if (scannedGitDirs.has(gitDir)) continue
+    scannedGitDirs.add(gitDir)
+    log = git(dir, 'log', '--all', '--regexp-ignore-case', ...authorArgs, '--format=C %H %ae %ad', '--date=format:%Y', '--numstat')
   } catch {
     continue // empty repo
   }
