@@ -6,41 +6,41 @@
       <text y="62" font-size="14" fill="#59636e">Repositories</text>
     </g>
     <g transform="translate(290.6666666666667, 32)">
-      <text y="36" font-size="36" font-weight="600" fill="#1f2328">5,558</text>
+      <text y="36" font-size="36" font-weight="600" fill="#1f2328">5,768</text>
       <text y="62" font-size="14" fill="#59636e">Commits</text>
     </g>
     <g transform="translate(549.3333333333334, 32)">
-      <text y="36" font-size="36" font-weight="600" fill="#1f2328">801</text>
+      <text y="36" font-size="36" font-weight="600" fill="#1f2328">834</text>
       <text y="62" font-size="14" fill="#59636e">Pull / merge requests</text>
     </g>
   <text x="32" y="124" font-size="14" font-weight="600" fill="#1f2328">Languages</text>
   <clipPath id="bar"><rect x="32" y="140" width="776" height="10" rx="5"/></clipPath>
   <rect x="32" y="140" width="776" height="10" rx="5" fill="#eaeef2"/>
-  <g clip-path="url(#bar)"><rect x="32.00" y="140" width="288.47" height="10" fill="#3178c6"/><rect x="320.47" y="140" width="189.19" height="10" fill="#61dafb"/><rect x="509.66" y="140" width="160.04" height="10" fill="#41b883"/><rect x="669.70" y="140" width="60.65" height="10" fill="#f1e05a"/><rect x="730.35" y="140" width="24.41" height="10" fill="#e38c00"/><rect x="754.77" y="140" width="18.31" height="10" fill="#3572a5"/><rect x="773.08" y="140" width="16.43" height="10" fill="#178600"/><rect x="789.50" y="140" width="18.50" height="10" fill="#8b949e"/></g>
+  <g clip-path="url(#bar)"><rect x="32.00" y="140" width="283.03" height="10" fill="#3178c6"/><rect x="315.03" y="140" width="186.30" height="10" fill="#61dafb"/><rect x="501.33" y="140" width="157.29" height="10" fill="#41b883"/><rect x="658.62" y="140" width="67.16" height="10" fill="#f1e05a"/><rect x="725.77" y="140" width="24.68" height="10" fill="#e38c00"/><rect x="750.46" y="140" width="19.57" height="10" fill="#178600"/><rect x="770.03" y="140" width="18.03" height="10" fill="#3572a5"/><rect x="788.06" y="140" width="19.94" height="10" fill="#8b949e"/></g>
   
     <circle cx="37" cy="176" r="5" fill="#3178c6"/>
-    <text x="48" y="180" font-size="13" fill="#1f2328">TypeScript <tspan fill="#59636e">37.2%</tspan></text>
+    <text x="48" y="180" font-size="13" fill="#1f2328">TypeScript <tspan fill="#59636e">36.5%</tspan></text>
     <circle cx="231" cy="176" r="5" fill="#61dafb"/>
-    <text x="242" y="180" font-size="13" fill="#1f2328">React <tspan fill="#59636e">24.4%</tspan></text>
+    <text x="242" y="180" font-size="13" fill="#1f2328">React <tspan fill="#59636e">24.0%</tspan></text>
     <circle cx="425" cy="176" r="5" fill="#41b883"/>
-    <text x="436" y="180" font-size="13" fill="#1f2328">Vue <tspan fill="#59636e">20.6%</tspan></text>
+    <text x="436" y="180" font-size="13" fill="#1f2328">Vue <tspan fill="#59636e">20.3%</tspan></text>
     <circle cx="619" cy="176" r="5" fill="#f1e05a"/>
-    <text x="630" y="180" font-size="13" fill="#1f2328">JavaScript <tspan fill="#59636e">7.8%</tspan></text>
+    <text x="630" y="180" font-size="13" fill="#1f2328">JavaScript <tspan fill="#59636e">8.7%</tspan></text>
     <circle cx="37" cy="202" r="5" fill="#e38c00"/>
-    <text x="48" y="206" font-size="13" fill="#1f2328">SQL <tspan fill="#59636e">3.1%</tspan></text>
-    <circle cx="231" cy="202" r="5" fill="#3572a5"/>
-    <text x="242" y="206" font-size="13" fill="#1f2328">Python <tspan fill="#59636e">2.4%</tspan></text>
-    <circle cx="425" cy="202" r="5" fill="#178600"/>
-    <text x="436" y="206" font-size="13" fill="#1f2328">C# <tspan fill="#59636e">2.1%</tspan></text>
+    <text x="48" y="206" font-size="13" fill="#1f2328">SQL <tspan fill="#59636e">3.2%</tspan></text>
+    <circle cx="231" cy="202" r="5" fill="#178600"/>
+    <text x="242" y="206" font-size="13" fill="#1f2328">C# <tspan fill="#59636e">2.5%</tspan></text>
+    <circle cx="425" cy="202" r="5" fill="#3572a5"/>
+    <text x="436" y="206" font-size="13" fill="#1f2328">Python <tspan fill="#59636e">2.3%</tspan></text>
     <circle cx="619" cy="202" r="5" fill="#8b949e"/>
-    <text x="630" y="206" font-size="13" fill="#1f2328">Other <tspan fill="#59636e">2.4%</tspan></text>
+    <text x="630" y="206" font-size="13" fill="#1f2328">Other <tspan fill="#59636e">2.6%</tspan></text>
   
   <text x="32" y="268" font-size="14" font-weight="600" fill="#1f2328">By year</text>
   <text x="234" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2019</text><text x="316" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2020</text><text x="398" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2021</text><text x="480" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2022</text><text x="562" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2023</text><text x="644" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2024</text><text x="726" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2025</text><text x="808" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#59636e">2026</text>
   <line x1="32" x2="808" y1="278" y2="278" stroke="#d0d7de"/>
   <text x="32" y="300" font-size="13" fill="#59636e">Commits</text>
-  <text x="234" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">272</text><text x="316" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">782</text><text x="398" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">505</text><text x="480" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">385</text><text x="562" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">468</text><text x="644" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">424</text><text x="726" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">432</text><text x="808" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">2,290</text>
+  <text x="234" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">272</text><text x="316" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">782</text><text x="398" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">505</text><text x="480" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">385</text><text x="562" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">468</text><text x="644" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">424</text><text x="726" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">432</text><text x="808" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">2,500</text>
   <text x="32" y="324" font-size="13" fill="#59636e">PRs / MRs</text>
-  <text x="234" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">13</text><text x="316" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">177</text><text x="398" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">89</text><text x="480" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">7</text><text x="562" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="644" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">3</text><text x="726" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="808" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">512</text>
-  <text x="32" y="358" font-size="12" fill="#59636e">Including private work · updated 2026-09-21</text>
+  <text x="234" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">13</text><text x="316" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">177</text><text x="398" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">89</text><text x="480" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">7</text><text x="562" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="644" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">3</text><text x="726" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">–</text><text x="808" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#1f2328">545</text>
+  <text x="32" y="358" font-size="12" fill="#59636e">Including private work · updated 2026-09-25</text>
 </svg>
