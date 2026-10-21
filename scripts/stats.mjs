@@ -251,7 +251,7 @@ function render(theme) {
   <g clip-path="url(#bar)">${segments}</g>
   ${legend}
   ${table}
-  <text x="${PAD}" y="${footerY}" font-size="12" fill="${t.muted}">Including private work · updated ${stats.updatedAt}</text>
+  <text x="${PAD}" y="${footerY}" font-size="12" fill="${t.muted}">Personal and co-founded projects, public and private · updated ${stats.updatedAt}</text>
 </svg>
 `
 }
