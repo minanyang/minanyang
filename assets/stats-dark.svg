@@ -1,46 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="382" viewBox="0 0 840 382" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif">
-  <rect x="0.5" y="0.5" width="839" height="381" rx="12" fill="#0d1117" stroke="#30363d"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="408" viewBox="0 0 840 408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif">
+  <rect x="0.5" y="0.5" width="839" height="407" rx="12" fill="#0d1117" stroke="#30363d"/>
   
     <g transform="translate(32, 32)">
       <text y="36" font-size="36" font-weight="600" fill="#e6edf3">55</text>
       <text y="62" font-size="14" fill="#9198a1">Repositories</text>
     </g>
     <g transform="translate(290.6666666666667, 32)">
-      <text y="36" font-size="36" font-weight="600" fill="#e6edf3">7,219</text>
+      <text y="36" font-size="36" font-weight="600" fill="#e6edf3">7,280</text>
       <text y="62" font-size="14" fill="#9198a1">Commits</text>
     </g>
     <g transform="translate(549.3333333333334, 32)">
-      <text y="36" font-size="36" font-weight="600" fill="#e6edf3">1,233</text>
+      <text y="36" font-size="36" font-weight="600" fill="#e6edf3">1,240</text>
       <text y="62" font-size="14" fill="#9198a1">Pull / merge requests</text>
     </g>
   <text x="32" y="124" font-size="14" font-weight="600" fill="#e6edf3">Languages</text>
   <clipPath id="bar"><rect x="32" y="140" width="776" height="10" rx="5"/></clipPath>
   <rect x="32" y="140" width="776" height="10" rx="5" fill="#21262d"/>
-  <g clip-path="url(#bar)"><rect x="32.00" y="140" width="322.78" height="10" fill="#3178c6"/><rect x="354.78" y="140" width="156.21" height="10" fill="#61dafb"/><rect x="511.00" y="140" width="71.92" height="10" fill="#178600"/><rect x="582.92" y="140" width="63.12" height="10" fill="#f1e05a"/><rect x="646.04" y="140" width="46.00" height="10" fill="#41b883"/><rect x="692.04" y="140" width="45.70" height="10" fill="#3572a5"/><rect x="737.74" y="140" width="37.66" height="10" fill="#e38c00"/><rect x="775.40" y="140" width="32.60" height="10" fill="#8b949e"/></g>
+  <g clip-path="url(#bar)"><rect x="32.00" y="140" width="209.80" height="10" fill="#5fa04e"/><rect x="241.80" y="140" width="154.95" height="10" fill="#61dafb"/><rect x="396.75" y="140" width="120.53" height="10" fill="#3178c6"/><rect x="517.28" y="140" width="71.88" height="10" fill="#178600"/><rect x="589.16" y="140" width="57.31" height="10" fill="#f1e05a"/><rect x="646.47" y="140" width="45.63" height="10" fill="#41b883"/><rect x="692.10" y="140" width="45.33" height="10" fill="#3572a5"/><rect x="737.43" y="140" width="37.36" height="10" fill="#e38c00"/><rect x="774.78" y="140" width="33.22" height="10" fill="#8b949e"/></g>
   
-    <circle cx="37" cy="176" r="5" fill="#3178c6"/>
-    <text x="48" y="180" font-size="13" fill="#e6edf3">TypeScript <tspan fill="#9198a1">41.6%</tspan></text>
+    <circle cx="37" cy="176" r="5" fill="#5fa04e"/>
+    <text x="48" y="180" font-size="13" fill="#e6edf3">Node.js <tspan fill="#9198a1">27.0%</tspan></text>
     <circle cx="231" cy="176" r="5" fill="#61dafb"/>
-    <text x="242" y="180" font-size="13" fill="#e6edf3">React <tspan fill="#9198a1">20.1%</tspan></text>
-    <circle cx="425" cy="176" r="5" fill="#178600"/>
-    <text x="436" y="180" font-size="13" fill="#e6edf3">C# <tspan fill="#9198a1">9.3%</tspan></text>
-    <circle cx="619" cy="176" r="5" fill="#f1e05a"/>
-    <text x="630" y="180" font-size="13" fill="#e6edf3">JavaScript <tspan fill="#9198a1">8.1%</tspan></text>
-    <circle cx="37" cy="202" r="5" fill="#41b883"/>
-    <text x="48" y="206" font-size="13" fill="#e6edf3">Vue <tspan fill="#9198a1">5.9%</tspan></text>
-    <circle cx="231" cy="202" r="5" fill="#3572a5"/>
-    <text x="242" y="206" font-size="13" fill="#e6edf3">Python <tspan fill="#9198a1">5.9%</tspan></text>
-    <circle cx="425" cy="202" r="5" fill="#e38c00"/>
-    <text x="436" y="206" font-size="13" fill="#e6edf3">SQL <tspan fill="#9198a1">4.9%</tspan></text>
-    <circle cx="619" cy="202" r="5" fill="#8b949e"/>
-    <text x="630" y="206" font-size="13" fill="#e6edf3">Other <tspan fill="#9198a1">4.2%</tspan></text>
+    <text x="242" y="180" font-size="13" fill="#e6edf3">React <tspan fill="#9198a1">20.0%</tspan></text>
+    <circle cx="425" cy="176" r="5" fill="#3178c6"/>
+    <text x="436" y="180" font-size="13" fill="#e6edf3">TypeScript <tspan fill="#9198a1">15.5%</tspan></text>
+    <circle cx="619" cy="176" r="5" fill="#178600"/>
+    <text x="630" y="180" font-size="13" fill="#e6edf3">C# <tspan fill="#9198a1">9.3%</tspan></text>
+    <circle cx="37" cy="202" r="5" fill="#f1e05a"/>
+    <text x="48" y="206" font-size="13" fill="#e6edf3">JavaScript <tspan fill="#9198a1">7.4%</tspan></text>
+    <circle cx="231" cy="202" r="5" fill="#41b883"/>
+    <text x="242" y="206" font-size="13" fill="#e6edf3">Vue <tspan fill="#9198a1">5.9%</tspan></text>
+    <circle cx="425" cy="202" r="5" fill="#3572a5"/>
+    <text x="436" y="206" font-size="13" fill="#e6edf3">Python <tspan fill="#9198a1">5.8%</tspan></text>
+    <circle cx="619" cy="202" r="5" fill="#e38c00"/>
+    <text x="630" y="206" font-size="13" fill="#e6edf3">SQL <tspan fill="#9198a1">4.8%</tspan></text>
+    <circle cx="37" cy="228" r="5" fill="#8b949e"/>
+    <text x="48" y="232" font-size="13" fill="#e6edf3">Other <tspan fill="#9198a1">4.3%</tspan></text>
   
-  <text x="32" y="268" font-size="14" font-weight="600" fill="#e6edf3">By year</text>
-  <text x="234" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2019</text><text x="316" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2020</text><text x="398" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2021</text><text x="480" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2022</text><text x="562" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2023</text><text x="644" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2024</text><text x="726" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2025</text><text x="808" y="268" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2026</text>
-  <line x1="32" x2="808" y1="278" y2="278" stroke="#30363d"/>
-  <text x="32" y="300" font-size="13" fill="#9198a1">Commits</text>
-  <text x="234" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">272</text><text x="316" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">782</text><text x="398" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">130</text><text x="480" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">7</text><text x="562" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">47</text><text x="644" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">410</text><text x="726" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">430</text><text x="808" y="300" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">5,141</text>
-  <text x="32" y="324" font-size="13" fill="#9198a1">PRs / MRs</text>
-  <text x="234" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">13</text><text x="316" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">177</text><text x="398" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">89</text><text x="480" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">7</text><text x="562" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">–</text><text x="644" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">3</text><text x="726" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">–</text><text x="808" y="324" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">944</text>
-  <text x="32" y="358" font-size="12" fill="#9198a1">Personal and co-founded projects, public and private · updated 2026-10-21</text>
+  <text x="32" y="294" font-size="14" font-weight="600" fill="#e6edf3">By year</text>
+  <text x="234" y="294" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2019</text><text x="316" y="294" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2020</text><text x="398" y="294" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2021</text><text x="480" y="294" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2022</text><text x="562" y="294" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2023</text><text x="644" y="294" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2024</text><text x="726" y="294" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2025</text><text x="808" y="294" font-size="13" font-weight="600" text-anchor="end" fill="#9198a1">2026</text>
+  <line x1="32" x2="808" y1="304" y2="304" stroke="#30363d"/>
+  <text x="32" y="326" font-size="13" fill="#9198a1">Commits</text>
+  <text x="234" y="326" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">272</text><text x="316" y="326" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">782</text><text x="398" y="326" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">130</text><text x="480" y="326" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">7</text><text x="562" y="326" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">47</text><text x="644" y="326" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">410</text><text x="726" y="326" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">430</text><text x="808" y="326" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">5,202</text>
+  <text x="32" y="350" font-size="13" fill="#9198a1">PRs / MRs</text>
+  <text x="234" y="350" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">13</text><text x="316" y="350" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">177</text><text x="398" y="350" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">89</text><text x="480" y="350" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">7</text><text x="562" y="350" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">–</text><text x="644" y="350" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">3</text><text x="726" y="350" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">–</text><text x="808" y="350" font-size="13" font-weight="400" text-anchor="end" fill="#e6edf3">951</text>
+  <text x="32" y="384" font-size="12" fill="#9198a1">Personal and co-founded projects, public and private · updated 2026-10-22</text>
 </svg>

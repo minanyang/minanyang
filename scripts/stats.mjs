@@ -27,6 +27,8 @@ const LANGUAGES = {
   Go: { color: '#00add8', ext: ['go'] },
   Java: { color: '#b07219', ext: ['java'] },
   Swift: { color: '#f05138', ext: ['swift'] },
+  // No extension of its own: TypeScript/JavaScript in a Node backend repo (see isNodeBackend).
+  'Node.js': { color: '#5fa04e', ext: [] },
 }
 const EXT_TO_LANGUAGE = Object.fromEntries(
   Object.entries(LANGUAGES).flatMap(([name, { ext }]) => ext.map((e) => [e, name])),
@@ -64,6 +66,20 @@ function repoKey(dir) {
   return `local:${relative(config.root, dir)}`
 }
 
+const SERVER_DEPS = ['express', 'fastify', '@nestjs/core', 'koa', 'hono', '@hapi/hapi']
+const FRONTEND_DEPS = ['react', 'vue', 'svelte', 'next', 'nuxt', '@angular/core']
+
+// A server framework and no frontend framework in package.json. Read from HEAD so bare archives work too.
+function isNodeBackend(dir) {
+  try {
+    const pkg = JSON.parse(git(dir, 'show', 'HEAD:package.json'))
+    const deps = { ...pkg.dependencies, ...pkg.devDependencies }
+    return SERVER_DEPS.some((d) => d in deps) && !FRONTEND_DEPS.some((d) => d in deps)
+  } catch {
+    return false
+  }
+}
+
 // Only diff my own commits; git matches --author against "Name <email>", so the exact check stays below.
 const authorArgs = [...emails].map((e) => `--author=<${e.replace(/[.*+?^$()[\]{}|\\]/g, '\\$&')}>`)
 
@@ -88,6 +104,7 @@ for (const dir of findRepos(config.root)) {
     continue // empty repo
   }
 
+  const nodeBackend = isNodeBackend(dir)
   let mine = false
   let hash = null
   for (const line of log.split('\n')) {
@@ -110,7 +127,8 @@ for (const dir of findRepos(config.root)) {
 
     const lines = Number(added) + Number(deleted)
     if (lines > MAX_LINES_PER_FILE_CHANGE || IGNORED_PATH.test(file)) continue
-    const language = EXT_TO_LANGUAGE[file.split('.').pop().toLowerCase()]
+    let language = EXT_TO_LANGUAGE[file.split('.').pop().toLowerCase()]
+    if (nodeBackend && (language === 'TypeScript' || language === 'JavaScript')) language = 'Node.js'
     if (language) linesByLanguage[language] = (linesByLanguage[language] ?? 0) + lines
   }
   if (mine) repos.add(key)
@@ -150,7 +168,7 @@ for (let page = 1; ; page++) {
 
 const totalLines = Object.values(linesByLanguage).reduce((a, b) => a + b, 0)
 const ranked = Object.entries(linesByLanguage).sort((a, b) => b[1] - a[1])
-const TOP = 7
+const TOP = 8
 const languages = ranked.slice(0, TOP).map(([name, lines]) => ({ name, color: LANGUAGES[name].color, percent: (lines / totalLines) * 100 }))
 const otherLines = ranked.slice(TOP).reduce((sum, [, lines]) => sum + lines, 0)
 if (otherLines) languages.push({ name: 'Other', color: '#8b949e', percent: (otherLines / totalLines) * 100 })
