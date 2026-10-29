@@ -134,21 +134,33 @@ for (const dir of findRepos(config.root)) {
   if (mine) repos.add(key)
 }
 
-// GitHub PRs, including repos that are not cloned locally. Search API caps at 1000 results.
-let pullRequests = 0
-const pullRequestsByYear = {}
-for (let page = 1; page <= 10; page++) {
-  const result = JSON.parse(
-    execFileSync('gh', ['api', 'search/issues', '-X', 'GET', '-f', `q=author:${config.githubUser} type:pr`, '-f', 'per_page=100', '-f', `page=${page}`], { encoding: 'utf8' }),
-  )
-  pullRequests = result.total_count
-  for (const item of result.items) {
-    const year = item.created_at.slice(0, 4)
-    pullRequestsByYear[year] = (pullRequestsByYear[year] ?? 0) + 1
-    const key = normalizeRepo(item.repository_url.replace(/.*\/repos\//, ''))
-    if (!isExcluded(key)) repos.add(key)
+// GitHub PRs, including repos that are not cloned locally. Search API caps at 1000 results
+// per query, so split the created date range in half until each part fits.
+const day = (ms) => new Date(ms).toISOString().slice(0, 10)
+function searchPullRequests(from, to) {
+  const items = []
+  for (let page = 1; page <= 10; page++) {
+    const result = JSON.parse(
+      execFileSync('gh', ['api', 'search/issues', '-X', 'GET', '-f', `q=author:${config.githubUser} type:pr created:${from}..${to}`, '-f', 'per_page=100', '-f', `page=${page}`], { encoding: 'utf8' }),
+    )
+    if (result.total_count > 1000 && from !== to) {
+      const mid = day((Date.parse(from) + Date.parse(to)) / 2)
+      return [...searchPullRequests(from, mid), ...searchPullRequests(day(Date.parse(mid) + 86400000), to)]
+    }
+    items.push(...result.items)
+    if (page * 100 >= result.total_count) break
   }
-  if (page * 100 >= result.total_count) break
+  return items
+}
+
+const githubPullRequests = searchPullRequests('2008-01-01', day(Date.now()))
+let pullRequests = githubPullRequests.length
+const pullRequestsByYear = {}
+for (const item of githubPullRequests) {
+  const year = item.created_at.slice(0, 4)
+  pullRequestsByYear[year] = (pullRequestsByYear[year] ?? 0) + 1
+  const key = normalizeRepo(item.repository_url.replace(/.*\/repos\//, ''))
+  if (!isExcluded(key)) repos.add(key)
 }
 
 // GitLab merge requests count as pull requests.
