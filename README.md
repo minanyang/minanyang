@@ -4,7 +4,7 @@ Senior software engineer with 7+ years of experience, mostly as the founding eng
 
 ### Open source
 
-- 🏝️ [**veland**](https://github.com/minanyang/veland) — a Claude Code plugin that takes a coding agent's "done" and checks it: each ticket is planned, built in its own worktree, verified by scripts, reviewed by an agent that never saw how it was built, then merged.
+- 🔟 [**10x Agent**](https://github.com/minanyang/10x-agent) — a multi-agent workflow for shipping code, as a Claude Code plugin: each ticket is planned, built in its own worktree, verified by scripts, reviewed by an agent that never saw how it was built, then merged.
 - <img src="https://raw.githubusercontent.com/minanyang/hotspotly/main/docs/icon.png" width="20" alt=""> [**Hotspotly**](https://github.com/minanyang/hotspotly) — a macOS menu bar app that keeps your Mac steady on a phone's hotspot and on Wi-Fi: turns off AWDL, keeps an idle hotspot awake and pins a network.
 - 🧠 [**Brain**](https://github.com/minanyang/brain) — a Claude Code plugin that turns every coding session into a wiki the agent maintains.
 - <img src="https://raw.githubusercontent.com/minanyang/nameable/main/docs/brand/icon-dark.png" width="20" alt=""> [**Nameable**](https://github.com/minanyang/nameable) — checks whether a project name is really free on every registry, store and domain it ships to, applying each registry's own rules instead of reading "not found" as available. A CLI, MCP server and Claude Code plugin.
