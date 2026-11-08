@@ -4,10 +4,17 @@ Senior software engineer with 7+ years of experience, mostly as the founding eng
 
 ### Open source
 
+- <img src="https://raw.githubusercontent.com/minanyang/token2agent/main/public/favicon.svg" width="20" alt=""> [**Token2Agent**](https://github.com/minanyang/token2agent) — a free AI/LLM engineering roadmap in English and Traditional Chinese, from how text becomes tokens to agent systems you can evaluate, secure and ship, with a complete lecture for every chapter. Read it at [token2agent.com](https://token2agent.com).<br>
+  <a href="https://token2agent.com">
+  <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/minanyang/token2agent/main/.github/assets/hero-ids-fast-dark.gif">
+  <img alt="Token2Agent home page: each token of the title and tagline shows its token id in turn while an agent run log steps through the roadmap" src="https://raw.githubusercontent.com/minanyang/token2agent/main/.github/assets/hero-ids-fast-light.gif">
+  </picture>
+  </a>
 - 🔟 [**10x Agent**](https://github.com/minanyang/10x-agent) — a multi-agent workflow for shipping code, as a Claude Code plugin: each ticket is planned, built in its own worktree, verified by scripts, reviewed by an agent that never saw how it was built, then merged.
-- <img src="https://raw.githubusercontent.com/minanyang/hotspotly/main/docs/icon.png" width="20" alt=""> [**Hotspotly**](https://github.com/minanyang/hotspotly) — a macOS menu bar app that keeps your Mac steady on a phone's hotspot and on Wi-Fi: turns off AWDL, keeps an idle hotspot awake and pins a network.
-- 🧠 [**Brain**](https://github.com/minanyang/brain) — a Claude Code plugin that turns every coding session into a wiki the agent maintains.
 - <img src="https://raw.githubusercontent.com/minanyang/nameable/main/docs/brand/icon-dark.png" width="20" alt=""> [**Nameable**](https://github.com/minanyang/nameable) — checks whether a project name is really free on every registry, store and domain it ships to, applying each registry's own rules instead of reading "not found" as available. A CLI, MCP server and Claude Code plugin.
+- 🧠 [**Brain**](https://github.com/minanyang/brain) — a Claude Code plugin that turns every coding session into a wiki the agent maintains.
+- <img src="https://raw.githubusercontent.com/minanyang/hotspotly/main/docs/icon.png" width="20" alt=""> [**Hotspotly**](https://github.com/minanyang/hotspotly) — a macOS menu bar app that keeps your Mac steady on a phone's hotspot and on Wi-Fi: turns off AWDL, keeps an idle hotspot awake and pins a network.
 
 ### Work
 
